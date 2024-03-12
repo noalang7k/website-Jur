@@ -1,0 +1,60 @@
+<html>
+<head>
+
+</head>
+<body>
+<script>
+// Definieer een JSON-object voor de boekenwinkel met een array van boeken
+const boekenwinkel = {
+  boeken: [
+    {
+      titel: "Het Achterhuis",
+      auteur: "Anne Frank",
+      jaar: 1947
+    },
+    {
+      titel: "De Da Vinci Code",
+      auteur: "Dan Brown",
+      jaar: 2003
+    },
+    {
+      titel: "Harry Potter en de Steen der Wijzen",
+      auteur: "J.K. Rowling",
+      jaar: 1997
+    }
+  ]
+};
+
+// Weergave van het JSON-object voor de boekenwinkel op de console
+console.log("JSON-object voor de boekenwinkel:");
+console.log(boekenwinkel);
+
+// Omzetten van het JSON-object voor de boekenwinkel naar een JSON-string met JSON.stringify()
+const jsonString = JSON.stringify(boekenwinkel);
+
+// Weergave van de JSON-string op de console
+console.log("JSON-string:");
+console.log(jsonString);
+
+// Omzetten van de JSON-string naar een JavaScript-object met JSON.parse()
+const parsedObject = JSON.parse(jsonString);
+
+// Weergave van de eigenschappen van het JavaScript-object voor de boekenwinkel op de console
+console.log("Parsed JavaScript-object voor de boekenwinkel:");
+console.log(parsedObject);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

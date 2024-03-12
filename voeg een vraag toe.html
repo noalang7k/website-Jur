@@ -1,0 +1,57 @@
+<html>
+    <head>
+      <title>Nieuwe vragen toevoegen</title>
+    </head>
+    <body>
+      <h1>Nieuwe vragen toevoegen</h1>
+
+      <label for="nieuweVraag">Vraag:</label>
+      <input type="text" id="nieuweVraag" placeholder="Voer de nieuwe vraag in"><br>
+
+      <label for="nieuweAntwoorden">Antwoorden (gescheiden door komma's):</label>
+      <input type="text" id="nieuweAntwoorden" placeholder="Voer de nieuwe antwoorden in"><br>
+
+      <label for="juisteAntwoord">Juiste antwoord:</label>
+      <input type="text" id="juisteAntwoord" placeholder="Voer het juiste antwoord in"><br>
+
+      <button onclick="voegVraagToe()">Voeg vraag toe</button>
+      <button onclick="window.close()">Sluit tabblad</button>
+
+      <script>
+        function voegVraagToe() {
+          var nieuweVraag = document.getElementById("nieuweVraag").value;
+          var nieuweAntwoorden = document.getElementById("nieuweAntwoorden").value.split(",");
+          var juisteAnt          // Controleer of alle velden zijn ingevuld
+          if (nieuweVraag.trim() === "" || nieuweAntwoorden.length < 2 || juisteAntwoord.trim() === "") {
+            alert("Vul alle velden in");
+            return;
+          }
+
+          // Maak een nieuw vraagobject en voeg het toe aan de vragenlijst
+          var nieuweVraagObject = {
+            vraag: nieuweVraag,
+            antwoorden: nieuweAntwoorden,
+            juisteAntwoord: juisteAntwoord
+          };
+
+          vragen.push(nieuweVraagObject);
+
+          // Reset de inputvelden
+          document.getElementById("nieuweVraag").value = "";
+          document.getElementById("nieuweAntwoorden").value = "";
+          document.getElementById("juisteAntwoord").value = "";
+
+          // Sluit het tabblad na het toevoegen van de vraag
+          window.close();
+        }
+      </script>
+    
+
+    <a href="quiz (1).html">Ga terug naar de quiz!</a>
+
+</body>
+    </html>
+  `);
+}
+
+weergeefVragen();

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://127.0.0.1:5500/10-3/opdrachten.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Opdrachtenpagina</title>
+    <style>
+      body {
+        background-color: rgb(201, 148, 51);
+      }
+      .opdracht {
+        padding: 20px;
+        margin: 10px;
+        background-color: rgb(233, 59, 59);
+        color: black;
+      }
+   
+  </style>
+  <div class="navbar-inner">
+    
+    
+      
+	<li><a href="index.html" class="active"><i class="icon-user"></i> Profile</a></li>
+	<li><a href="skills.html"><i class="icon-trophy"></i> Skills</a></li>
+	<li><a href="Opdrachten.html"><i class="icon-paper-plane"></i> opdrachten</a></li>
+  </ul>
+  <div class="nav-collapse collapse"></div>
+</div>
+
+
+</head>
+  <body>
+    <h1>Mijn Opdrachten!</h1>
+    
+    <div class="opdracht">S
+      <h2>Opdracht Rekenmachine</h2>
+      <p>Hier heb ik een rekenmachine gemaakt met behulp van HTML, CSS en Javascript.</p>
+      <a href="rekenmachine.html">Bekijk mijn rekenmachine</a>
+	  <a href="buttons.html">buttons</a>
+	  <a href="condities.html">condities</a>
+	  <a href="functies.html">functie</a>
+	<a href="datatype.html">datatype</a>
+	<a href="oefenen met berekeningen.html">oefenen met berekeningen</a>
+	<a href="operatoren.html">Operatoren</a>
+	<a href="stringbewerkingen.html">Stringbewerkingen</a>
+	<a href="variabelen.html">Variabelen</a>
+	<h2> Presentatie slimme verlichting</h2>
+    <p> Ik heb hier een presentatie gemaakt over slimme verlichting:</p>
+    <video width="640" height="360" controls >
+		<source src="https://educatem.blob.core.windows.net/presentaties/JurMesman/MP4 bestand presentatie jur mesman .mp4" type="video/mp4">
+	  </video>
+
+
+
+
+
+	<h2> Filmpje uitleg Rekenmachine met behulp van HTML, CSS en javascript.</h2>
+	<video width="640" height="360" controls >
+		<source src="https://educatem.blob.core.windows.net/presentaties/JurMesman/MP4 filmpje uitleg .mp4" type="video/mp4">
+	</video>
+
+
+
+	<h2> Opdrachten Datastructuren en Objecten</h2>
+	<a href="objecten.html">Objecten</a>
+	<a href="array.html">Array</a>
+	<a href="datum.html">Datum</a>
+	<a href="JSON.html">JSON</a>
+	<a href="JSON2.html">JSON2</a>
+	<a href="quiz (1).html">Klik hier voor de super gave coole quiz!</a>
+
+	<h2> Opdracht: Eigen Game</h2>
+<h3>Ik heb voor het laatse onderdeel van informatica de game Snake gemaakt.</h3>
+<a href="snake.html">Klik hier voor de game Snake</a>
+<h2> Hieronder staat de vlog waarin ik uitleg hoe de game werkt.</h2>
+<video width="640" height="360" controls >
+	<source src="https://educatem.blob.core.windows.net/presentaties/JurMesman/vlog game.mp4" type="video/mp4">
+</video>
+	
+
+
+
+</div>
+    
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body>
+</html>

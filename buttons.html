@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verhoog/Verlaag</title>
+	<script>
+		// Het bijhouden van een getal
+		let getal = 0;
+
+		// Functie om het getal te verhogen
+		function verhoog() {
+			getal++;
+			document.getElementById("resultaat").innerHTML = getal;
+		}
+
+		// Functie om het getal te verlagen
+		function verlaag() {
+			getal--;
+			document.getElementById("resultaat").innerHTML = getal;
+		}
+	</script>
+</head>
+<body>
+	<!-- Knoppen om het getal te verhogen of te verlagen -->
+	<button onclick="verhoog()">Verhoog</button>
+	<button onclick="verlaag()">Verlaag</button>
+
+	<!-- Weergave van het getal -->
+	<p>Huidig getal: <span id="resultaat">0</span></p>
+</body>
+</html>

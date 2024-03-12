@@ -1,0 +1,65 @@
+<html>
+<head>
+
+</head>
+<body>
+<script> 
+// Maak een nieuw Datum object (huidigeDatum) aan en sla het op
+const huidigeDatum = new Date();
+
+// Weergave van de huidige datum in het gewenste formaat op de console
+console.log(`Huidige datum: ${huidigeDatum.toLocaleDateString()}`);
+
+// Extractie van specifieke delen van de datum
+const dag = huidigeDatum.getDate();
+const maand = huidigeDatum.getMonth() + 1; // Maanden beginnen bij 0, dus voegen we 1 toe
+const jaar = huidigeDatum.getFullYear();
+
+// Weergave van specifieke delen van de datum op de console
+console.log(`Dag: ${dag}`);
+console.log(`Maand: ${maand}`);
+console.log(`Jaar: ${jaar}`);
+
+// Maak een tweede datumobject aan
+const tweedeDatum = new Date(2023, 0, 1); // 1 januari 2023
+
+// Vergelijk tweedeDatum met huidigeDatum
+if (tweedeDatum > huidigeDatum) {
+  console.log("tweedeDatum is later dan huidigeDatum");
+} else if (tweedeDatum < huidigeDatum) {
+  console.log("tweedeDatum is eerder dan huidigeDatum");
+} else {
+  console.log("tweedeDatum is gelijk aan huidigeDatum");
+}
+</script>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

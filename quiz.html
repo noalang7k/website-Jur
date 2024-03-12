@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+  <h1>Quiz</h1>
+
+  <div id="vraagContainer">
+    <h3 id="vraagTekst"></h3>
+    <ul id="antwoordLijst"></ul>
+    <button onclick="volgendeVraag()">Volgende vraag</button>
+  </div>
+
+  <div id="scoreContainer">
+    <h3>Score</h3>
+    <p id="score"></p>
+  </div>
+
+  <script>
+    // JavaScript-code
+    var vragen = [
+    {
+        vraag: "Hoeveel KG squat Ben",
+        antwoorden: ["140", "100", "10", "75"],
+        juisteAntwoord: "140"
+      },
+      {
+        vraag: "Wie is de president van Nederland",
+        antwoorden: ["Sigrid Kaag", "Mark Rutte", "Robin van Persie ", "Wopke Hoekstra"],
+        juisteAntwoord: "Mark Rutte"
+      },
+      {
+        vraag: "Waar ligt Friesland",
+        antwoorden: ["In Afrika", "In Nieuw-Vennep", "In Nederland", "In R*sland"],
+        juisteAntwoord: "In Nederland"
+      },
+      {
+        vraag: "Welke school zit Jur",
+        antwoorden: ["Het HVC", "Op het KSH", "Op het Kajmunk", "Op het Urk college"],
+        juisteAntwoord: "Het HVC"
+      },
+      {
+        vraag: "Hoeveel contineten zijn er?",
+        antwoorden: ["4", "7", "6", "5"],
+        juisteAntwoord: "6"
+      },
+    {
+        vraag: "Hoeveel provincies heeft Nederland",
+        antwoorden: ["10", "12", "11", "9"],
+        juisteAntwoord: "12"
+      },
+      {
+        vraag: "In welke stad ligt de Tweede kamer",
+        antwoorden: ["Den-Haag", "Rotterdam", "Amsterdam", "Katwijk"],
+        juisteAntwoord: "Den-Haag"
+      },
+      {
+        vraag: "Wie is de grootste youtuber van Nederland ",
+        antwoorden: ["Vthorben", "Enzo Knol", "LinkTijger", "Royalistiq"],
+        juisteAntwoord: "Royalistiq"
+      },
+      {
+        vraag: "Voor welke voetbalclub is iedereen",
+        antwoorden: ["Sv Urk", "AFC Ajax ", "VV katwijk", "VV Jonathan"],
+        juisteAntwoord: "Sv Urk"
+      },
+      {
+        vraag: "Hoeveel KG bencht Ben?",
+        antwoorden: ["100", "70 ", "80", "90"],
+        juisteAntwoord: "100"
+      },
+
+    ];
+
+    var huidigeVraagIndex = 0;
+    var score = 0;
+
+    var vraagTekstElement = document.getElementById("vraagTekst");
+    var antwoordLijstElement = document.getElementById("antwoordLijst");
+    var scoreElement = document.getElementById("score");
+
+    function weergeefVragen() {
+      var huidigeVraag = vragen[huidigeVraagIndex];
+      vraagTekstElement.textContent = huidigeVraag.vraag;
+
+      while (antwoordLijstElement.firstChild) {
+        antwoordLijstElement.removeChild(antwoordLijstElement.firstChild);
+      }
+
+      for (var i = 0; i < huidigeVraag.antwoorden.length; i++) {
+        var antwoord = huidigeVraag.antwoorden[i];
+        var antwoordItem = document.createElement("li");
+        antwoordItem.textContent = antwoord;
+        antwoordItem.onclick = controleerAntwoord;
+        antwoordLijstElement.appendChild(antwoordItem);
+      }
+    }
+
+    function controleerAntwoord(event) {
+      var gekozenAntwoord = event.target.textContent;
+      var huidigeVraag = vragen[huidigeVraagIndex];
+
+      if (gekozenAntwoord === huidigeVraag.juisteAntwoord) {
+        score++;
+        event.target.style.backgroundColor = "green";
+      } else {
+        event.target.style.backgroundColor = "red";
+      }
+
+      antwoordLijstElement.style.pointerEvents = "none"; // Schakel klikken op antwoorden uit
+      volgendeVraag();
+    }
+
+    function volgendeVraag() {
+      if (huidigeVraagIndex < vragen.length - 1) {
+        huidigeVraagIndex++;
+        weergeefVragen();
+        antwoordLijstElement.style.pointerEvents = "auto"; // Schakel klikken op antwoorden in
+      } else {
+        toonEindResultaat();
+      }
+    }
+
+    function toonEindResultaat() {
+      vraagTekstElement.textContent = "Quiz is afgelopen!";
+      antwoordLijstElement.style.display = "none";
+      document.getElementById("scoreContainer").style.display = "block";
+      scoreElement.textContent = "Je score: " + score + "/" + vragen.length;
+    }
+
+    weergeefVragen();
+  </script>
+</body>
+</html>
